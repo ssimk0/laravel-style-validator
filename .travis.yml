@@ -1,7 +1,7 @@
 language: dart
 addons:
   sonarcloud:
-    organization: "sonarcloud_organization_key" # the key of the org you chose at step #3
+    organization: "ssimk0-github" # the key of the org you chose at step #3
     token:
       secure: $SONAR_TOKEN
 dart:
