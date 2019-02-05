@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ssimk0/laravel-style-validator.svg?branch=master)](https://travis-ci.org/ssimk0/laravel-style-validator)
+
 WIP: still work in progress on this library
 
 A validation library in style of well known laravel validation for Dart developers.
