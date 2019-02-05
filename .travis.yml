@@ -1,4 +1,21 @@
 language: dart
+addons:
+  sonarcloud:
+    organization: "ssimk0-github" # the key of the org you chose at step #3
+    token:
+      secure: $SONAR_TOKEN
+dart:
+  - stable
+
+script:
+  # other script steps might be done before running the actual analysis
+  - sonar-scanner
+
+
 dart_task:
   - test: --platform vm
   - dartanalyzer: --fatal-warnings lib
+
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
