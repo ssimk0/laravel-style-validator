@@ -1,5 +1,4 @@
 language: dart
 dart_task:
   - test: --platform vm
-  - dartfmt: true
   - dartanalyzer: --fatal-warnings lib
