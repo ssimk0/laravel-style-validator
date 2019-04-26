@@ -1,4 +1,5 @@
 import 'package:validator/src/rules/accepted.dart';
+import 'package:validator/src/rules/boolean.dart';
 import 'package:validator/src/rules/min.dart';
 import 'package:validator/src/rules/rule.dart';
 import 'package:validator/src/rules/alpha.dart';
@@ -17,7 +18,8 @@ class Validator {
     'alpha_dash': AlphaDash(),
     'alpha_num': AlphaNum(),
     'is_list': IsList(),
-    'between': Between()
+    'between': Between(),
+    'boolean': Boolean(),
   };
 
   bool _onlyBooleanResult;

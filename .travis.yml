@@ -7,15 +7,7 @@ addons:
 dart:
   - stable
 
-script:
-  # other script steps might be done before running the actual analysis
-  - sonar-scanner
-
-
 dart_task:
   - test: --platform vm
+  - test: --platform chrome
   - dartanalyzer: --fatal-warnings lib
-
-cache:
-  directories:
-    - '$HOME/.sonar/cache'
