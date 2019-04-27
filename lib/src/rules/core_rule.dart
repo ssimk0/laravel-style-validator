@@ -1,4 +1,5 @@
 import 'package:validator/src/exceptions/rule_configuration_exception.dart';
+import 'package:validator/src/constants/errorMessages.dart';
 
 class CoreRule {
   int getSize(dynamic value) {
@@ -14,8 +15,7 @@ class CoreRule {
       return value.toString().length;
     }
 
-    throw RuleConfigurationException(
-        'Rule support as value only string, List or number');
+    throw RuleConfigurationException(ErrorMessages.GET_SIZE_VALUE);
   }
 
   int parseIntOption(dynamic option) {
@@ -23,8 +23,7 @@ class CoreRule {
       option = int.tryParse(option) ?? null;
 
       if (option == null) {
-        throw RuleConfigurationException(
-            'Rule support only integer as a option');
+        throw RuleConfigurationException(ErrorMessages.PARSE_INT_OPTION);
       }
     }
 

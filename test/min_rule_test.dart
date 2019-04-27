@@ -2,6 +2,7 @@ import 'package:test/test.dart';
 import 'package:validator/src/rules/min.dart';
 import 'package:validator/src/validator.dart';
 import 'package:validator/src/exceptions/rule_configuration_exception.dart';
+import 'package:validator/src/constants/errorMessages.dart';
 
 void main() {
   group('A group of Accepterd rule tests', () {
@@ -55,7 +56,7 @@ void main() {
         expect(false, true); // this should not be executed
       } on RuleConfigurationException catch (e) {
         expect(
-            e.cause, 'Rule support only integer as a option');
+            e.cause, ErrorMessages.PARSE_INT_OPTION);
       }
     });
 
@@ -66,7 +67,18 @@ void main() {
         expect(false, true); // this should not be executed
       } on RuleConfigurationException catch (e) {
         expect(
-            e.cause, 'Rule support as value only string, List or number');
+            e.cause, ErrorMessages.GET_SIZE_VALUE);
+      }
+    });
+
+    test('RuleConfigurationException with no size defined', () {
+      try {
+        validator.validate({'test': 1}, {'test': 'min'});
+
+        expect(false, true); // this should not be executed
+      } on RuleConfigurationException catch (e) {
+        expect(
+            e.cause, ErrorMessages.WRONG_CONFIGURATION);
       }
     });
   });
